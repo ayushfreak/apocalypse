@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% load blog_tags %}
+{% block title %}update {{request.user.first_name}}profile{% endblock %}
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>{{ form.media }}</p>
+    {{ form|crispy}}<br>
+    <input type="submit" value="Update" />
+</form>
+{% endblock %}

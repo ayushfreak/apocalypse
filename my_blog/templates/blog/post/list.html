@@ -1,0 +1,77 @@
+{% extends "blog/base.html" %}
+{% load staticfiles %}
+{% load blog_tags %}
+{% block title %}
+{% if user.is_authenticated %}
+{{ user }} Blog
+{% else %}
+public blog
+{% endif %}
+{% endblock %}
+{% block content %}
+{% comment %}
+
+
+{% if total_results %}
+
+<p> {{ total_results }} posts found </p>
+{% endif %}
+
+{% if tag %}
+<h2>Posts tagged with "{{ tag.name }}"</h2>
+{% endif %}
+{% endcomment %}
+{% if num %}
+<h2>Draft and Published Posts</h2>
+{% endif %}
+{% for post in posts %}
+<div class="post">
+<div class="heading">
+<h1>
+<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+</h1>
+<p class="date">
+Published {{ post.publish }} by</p>
+  <h3><a href="{% url 'blog:profile_dispaly' my_list=post.author%}">{{ post.author }}</a></h3>
+{% if post.created != post.updated %}
+<p>and updated {{post.updated}}</p>
+{% endif %}
+
+{{ post.body|safe|truncatewords_html:10|linebreaks }}
+<p>read time:
+{% if instance.read_time|time:"i" <= "01" %} < 01 minute
+{% else %}
+{{ post.read_time|date:"i" }} minutes
+{% endif %}
+</p>
+{% if user.is_authenticated %}
+  {% if user == post.author %}
+<a href="{% url 'blog:post-update' pk=post.id %}">update</a>
+<a href="{% url 'blog:post-delete' pk=post.id %}">delete</a>
+{% endif %}
+{% endif %}
+  </div>
+<div class="image">
+  <!-- read_time has become a property thats why can be called here-->
+  {% if post.image %}
+  <img class="img1"src="{{ post.image.url }}" alt="My image">
+  {% else %}
+  <img class="img1"src="{% static 'images/blog.jpg' %}" alt="My image">
+  {% endif %}
+</div>
+
+{% comment %}
+<p class="tags">
+Tags:
+{% for tag in post.tags.all %}
+<a href="{% url 'blog:post_list_by_tag' tag.slug %}">
+{{ tag.name }}
+</a>
+{% if not forloop.last %}, {% endif %}
+{% endfor %}
+</p>
+{% endcomment %}
+</div>
+{% endfor %}
+{% include "blog/post/pagination.html" with page=posts %}
+{% endblock %}

@@ -1,0 +1,125 @@
+*{
+margin:0;
+padding:0;
+}
+ul{
+  list-style-type: none;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+.login-page{
+  width: 100%;
+  height: 100vh;
+  background-image: url("/static/images/login.ccea03621fd7.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  text-align: center;
+}
+.login-box{
+  align-self: center;
+  margin: 0 auto;
+  background: rgba(0,0,0,.5);
+  padding: 30px;
+}
+.socialaccount_ballot,.socialaccount_providers{
+  padding: 30px 0 0 0;
+}
+.socialaccount_ballot ul li,.socialaccount_providers li{
+  display: inline;
+  padding: 12px;
+  margin: 10px;
+}
+.socialaccount_ballot ul li:nth-child(1),.socialaccount_providers li:nth-child(1){
+  background-color: rgba(211, 72, 54,1);
+  color: white;
+}
+.socialaccount_ballot ul li:nth-child(2),.socialaccount_providers li:nth-child(2){
+  background-color: rgba(59, 89, 152,1);
+  color: white;
+}
+.login-or{
+  padding: 20px 0 10px 0;
+}
+
+.signup>div>p,.login>div>p{
+  padding: 8px;
+  text-align: left;
+}
+.signup>div>p>input,.login>div>p>input{
+  float: right;
+  padding: 5px;
+}
+.login>div>p:last-child{
+  text-align: center;
+}
+.login>div>p:last-child>input{
+  float: none;
+}
+.login>a{
+  margin: 20px;
+  width: 100%;
+}
+button{
+  padding: 10px;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  background: rgba(0,0,0,.5);
+  border-bottom: 1px solid gray;
+  transition: 250ms ease-in-out;
+  color:rgba(250,250,250,.7);
+}
+input:focus{
+  border-bottom-color: white;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: rgba(250,250,250,.7);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(250,250,250,.7);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(250,250,250,.7);
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: rgba(250,250,250,.7);
+}
+button{
+  outline: 0;
+  border: 0;
+  background-color:rgba(0,0,250,.8);
+  color:rgba(250,250,250,1);
+}
+
+/* style of confirm email address */
+.confirm{
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/static/images/login.ccea03621fd7.jpg");
+  color: white;
+  background-size: cover;
+  font-style: italic;
+}
+.confirm>*{
+  padding: 20px;
+}
+.confirm h1{
+  padding-top: 100px;
+}
+.confirm>form>p{
+  padding: 20px;
+}
+.confirm>form>input{
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(1,1,160,1);
+  cursor: pointer;
+}

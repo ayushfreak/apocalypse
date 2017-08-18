@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% block title %}Share a post{% endblock %}
+{% block content %}
+{% if sent %}
+<h1 style="font-family: 'Dancing Script', cursive;">{{ post.title }}
+   was successfully sent to {{ cd.to }}</h1>
+{% else %}
+
+<h1 style="width:100%;height:30px;font-family: 'Dancing Script', cursive;">Share "{{ post.title }}" by e-mail</h1>
+
+<div class="" style="position:relative;top:-250px;">
+<form action="." method="post">
+{{ form.as_p }}
+{% csrf_token %}
+<input type="submit" value="Send e-mail">
+</form>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "blog/blog_base.html" %}
+{% load static %}
+{% load blog_tags %}
+{% load staticfiles %}
+{% block content %}
+<div class="about">
+<img src="{{ userprofile.profile_image_url }}"/>
+<p>
+{{ userprofile.user_info }}
+</p>
+</div>
+<h2>Draft and Published Posts</h2>
+{% for post in posts %}
+<div class="post">
+<div class="heading">
+<h2>
+<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+</h2>
+<p class="date">
+Published {{ post.publish }} by {{ post.author }}
+{% if post.created != post.updated %}
+and updated {{post.updated}}
+{% endif %}
+</p>
+{{ post.body|safe|truncatewords_html:10|linebreaks }}
+<p>read time:
+{% if instance.read_time|time:"i" <= "01" %} < 01 minute
+{% else %}
+{{ post.read_time|date:"i" }} minutes
+{% endif %}
+</p>
+{% if user.is_authenticated %}
+  {% if user == post.author %}
+<a href="{% url 'blog:post-update' pk=post.id %}">update</a>
+<a href="{% url 'blog:post-delete' pk=post.id %}">delete</a>
+{% endif %}
+{% endif %}
+  </div>
+<div class="image">
+  <!-- read_time has become a property thats why can be called here-->
+  {% if post.image %}
+  <img class="img1"src="{{ post.image.url }}" alt="My image">
+  {% else %}
+  <img class="img1"src="{% static 'images/blog.jpg' %}" alt="My image">
+  {% endif %}
+</div>
+
+</div>
+{% endfor %}
+{% endblock %}

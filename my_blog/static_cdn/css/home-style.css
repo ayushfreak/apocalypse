@@ -1,0 +1,266 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.menu-wrap{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left:-100%;
+  z-index: 2;
+  background-color: rgba(0,0,0,.6);
+  transition: .7s ease-in-out;
+}
+.menu-aside{
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: -500px;
+  width: 500px;
+  height: 100vh;
+  background-color: rgba(40,40,40,1);
+  transition: .7s ease-in-out;
+  color: rgba(250,250,250,.7);
+}
+.menu-aside ul li{
+  padding: 10px;
+  text-align: center;
+  line-height: 30px;
+}
+.menu-aside ul li:hover{
+  background-color: black;
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  left: 0;
+  transition: .7s ease-in-out;
+}
+.top-menu{
+  height: 60px;
+  width: 100%;
+  background-color:rgba(0,0,0,.4);
+  color: white;
+  border-bottom: white .1px solid;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+input{
+  border: 0;
+  outline: 0;
+  position: relative;
+  padding: 10px 40px 10px 0;
+  top: -18px;
+  left: 45px;
+  background-color: rgba(0,0,0,.5);
+  border-bottom: 1px solid rgba(250,250,250,.7);
+  visibility:hidden;
+  color: rgba(250,250,250,.8);
+}
+.hamburger{
+  float: left;
+  padding: 5px 10px 10px 10px;
+  cursor: pointer;
+}
+.logo{
+  float: left;
+  padding: 10px;
+  cursor: pointer;
+}
+.top-menu-one{
+  float: left;
+  padding: 20px 10px 10px 10px;
+}
+.top-menu-one >li{
+  display: inline;
+  list-style-type: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.top-menu-two{
+  float: right;
+  align-self: center;
+  padding: 5px 10px 10px 10px;
+}
+.top-menu-two >li{
+  display: inline;
+  list-style-type: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.img-1{
+  position: relative;
+  z-index: 1;
+}
+header{
+  height: 500px;
+  position: relative;
+}
+.wrap{
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+.container{
+  width: 400%;
+  height: 500px;
+  position: relative;
+  transition: .5s ease-in-out;
+}
+.container>div{
+  width: 25%;
+  height: 500px;
+  float: left;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+}
+.container>div>div{
+  width: 100%;
+  height: auto;
+  min-height: 40px;
+  align-self: center;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.2);
+  transition: 1s ease-in-out;
+  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('file:///home/ashish/Pictures/rohit%20pics/CSC_0034.JPG');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+.dots{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  display: flex;
+}
+.dots>ul{
+  width: auto;
+  margin: 0 auto;
+}
+.dots>ul>li{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 10px;
+  transition: .2s ease-in-out;
+  display: inline-block;
+}
+.dots>ul>li:hover{
+  transform: scale(2);
+  cursor: pointer;
+}
+section{
+  min-height: 500px;
+  background: linear-gradient(rgba(150,150,150,1),rgba(0,0,0,1));
+  padding: 20px;
+}
+.content{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  margin: 0 auto;
+}
+.content-div{
+  overflow: hidden;
+  width:250px;height:360px;
+  margin: 20px;
+  box-shadow: 0px 0px 2px 2px;
+}
+.image{
+  height:100%;
+  width:250px;
+  background:url('file:///home/ashish/Pictures/rohit%20pics/CSC_0034.JPG');
+  background-size:cover;
+  background-position: center;
+}
+  .heading{
+    height:300px;width:250px;background-color:black;
+    transform: skewY(10deg);
+    position: relative;
+    padding-top: 10px;
+    top: -80px;
+    transition: .5s ease-in-out;
+    color: white;
+    text-align: center;
+  }
+  .content-div:hover .heading{
+    transform: skewY(-10deg);
+    top: -150px;
+  }
+  .heading p{
+    transform: skewY(-10deg);
+    transition: .5s ease-in-out;
+    text-align: center;
+    padding-right: 5px;
+    margin-left: 4px;
+  }
+  .content-div:hover .heading p{
+    transform: skewY(10deg);
+  }
+  .heading h2{
+    transform: skewY(-10deg);
+    transition: .5s ease-in-out;
+    padding: 10px;
+  }
+  .content-div:hover .heading h2{
+    transform: skewY(10deg);
+  }
+  .next{
+    display: flex;
+    justify-content: center;
+  }
+  .next button{
+    outline: 0;
+    border: 0;
+    padding: 10px;
+    border-radius: 2px;
+    background-color: rgba(200,10,10,1);
+    color: white;
+    margin: 20px;
+  }
+
+  footer{
+    height: 400px;
+    width: 100%;
+    background-color:rgba(40,40,40,1);
+    color: white;
+    text-align: center;
+  }
+  footer>div>ul>li>a>img{
+    width: 50px;
+    height: 50px;
+  }
+  .foot{
+    padding: 20px;
+  }
+  .foot ul li{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+    margin: 40px;
+  }
+  .foot ul li a{
+    position: relative;
+    transition: 1s ease-in-out;
+  }
+  .foot ul li:hover a{
+    top: -54px;
+  }

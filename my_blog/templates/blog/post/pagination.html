@@ -1,0 +1,17 @@
+<div class="pagination">
+<span class="step-links">
+{% if page.has_previous %}
+<a href="?page={{ page.previous_page_number }}">Previous</a>
+{% endif %}
+<span class="current">
+Page {{ page.number }} of {{ page.paginator.num_pages }}.
+</span>
+{% if page.has_next %}
+<a href="?page={{ page.next_page_number }}">Next</a>
+<!-- ? mark is to supply information via GET method. here the url after ?mark
+is attached to the initial url through which the main page is called
+eg. blog/ is attached before the ?page= therefore if we use
+blog/?page={{ page.next_page_number }} it renders blog/blog/page= -->
+{% endif %}
+</span>
+</div> 
